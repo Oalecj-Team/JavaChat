@@ -14,7 +14,7 @@ public class ChatServerHandler extends ChannelInboundMessageHandlerAdapter<Strin
 	public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
 		Channel incoming = ctx.channel();
 		for (Channel channel : channels) {
-			channel.write("[SERVER] " + incoming.remoteAddress() + " has joined the server!\n");
+			channel.write("\n[SERVER] " + incoming.remoteAddress() + " has joined the server!\n");
 		}
 		channels.add(ctx.channel());
 	}
@@ -23,7 +23,7 @@ public class ChatServerHandler extends ChannelInboundMessageHandlerAdapter<Strin
 	public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
 		Channel incoming = ctx.channel();
 		for (Channel channel : channels) {
-			channel.write("[SERVER] " + incoming.remoteAddress() + " has left the server!\n");
+			channel.write("\n[SERVER] " + incoming.remoteAddress() + " has left the server!\n");
 		}
 		channels.remove(ctx.channel());
 	}
