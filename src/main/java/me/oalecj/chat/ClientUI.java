@@ -56,5 +56,6 @@ public class ClientUI extends JFrame{
 		submit.setVisible(false);
 		panel.setVisible(false);
 		myFrame.setVisible(false);
+		new ClientCH();
 	}
 }
